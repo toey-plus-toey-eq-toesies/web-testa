@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows Desktop</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #0078D7;
+            color: white;
+        }
+        
+        .desktop {
+            position: relative;
+            height: 100%;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Windows_XP_bliss.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .icon {
+            width: 60px;
+            text-align: center;
+            margin: 10px;
+            float: left;
+            cursor: pointer;
+        }
+
+        .icon img {
+            width: 100%;
+        }
+
+        .icon p {
+            margin: 5px 0 0;
+            font-size: 12px;
+        }
+
+        .taskbar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background-color: #333;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .taskbar .start-menu {
+            width: 100px;
+            height: 30px;
+            background-color: #1c7cce;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .taskbar .start-menu:hover {
+            background-color: #006bb3;
+        }
+
+        .taskbar .start-menu img {
+            width: 20px;
+            margin-right: 5px;
+        }
+        
+        .taskbar .time {
+            margin-left: auto;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="desktop">
+        <div class="icon">
+            <img src="https://via.placeholder.com/60x60.png?text=My+PC" alt="My PC">
+            <p>My PC</p>
+        </div>
+        <div class="icon">
+            <img src="https://via.placeholder.com/60x60.png?text=Recycle+Bin" alt="Recycle Bin">
+            <p>Recycle Bin</p>
+        </div>
+        <div class="icon">
+            <img src="https://via.placeholder.com/60x60.png?text=Documents" alt="Documents">
+            <p>Documents</p>
+        </div>
+
+        <div class="taskbar">
+            <div class="start-menu">
+                <img src="https://via.placeholder.com/20x20.png?text=W" alt="Start">
+                <span>Start</span>
+            </div>
+            <div class="time">
+                <script>
+                    function updateTime() {
+                        const now = new Date();
+                        const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                        document.querySelector('.time').textContent = timeString;
+                    }
+
+                    setInterval(updateTime, 1000);
+                    updateTime();
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
